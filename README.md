@@ -14,7 +14,7 @@ JS Playground
    ```
 1. If not, install it:
    ```zsh
-   brew install corepack:
+   brew install corepack
    ```
 1. Enable pnpm:
    ```zsh
