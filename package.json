@@ -4,14 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./src/app.ts",
-    "static:check": "./scripts/static-check.sh",
-    "static:fix": "./scripts/static-fix.sh",
-    "static:format:check": "oxfmt --check",
-    "static:format:fix": "oxfmt",
-    "static:lint:check": "oxlint",
-    "static:lint:fix": "oxlint --fix",
-    "static:types:check": "tsc --noEmit"
+    "check": "./scripts/check.sh",
+    "clean": "rm -rf dist",
+    "fix": "./scripts/fix.sh",
+    "format:check": "oxfmt --check",
+    "format:fix": "oxfmt",
+    "lint:check": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "start": "pnpm types:check && node ./src/app.ts",
+    "types:check": "tsc --noEmit"
   },
   "devDependencies": {
     "oxfmt": "^0.49.0",
