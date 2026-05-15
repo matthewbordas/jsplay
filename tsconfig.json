@@ -1,8 +1,9 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"module": "nodenext",
-		"esModuleInterop": true,
-		"strict": true
-	}
+  "compilerOptions": {
+    "module": "nodenext",
+    "noEmit": true,
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
+    "composite": true
+  }
 }

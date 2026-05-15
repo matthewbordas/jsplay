@@ -1,34 +1,30 @@
 # JS Play
 
-JS Playground
+**Important:**
+
+- This is really just a sandbox to play around with the latest Nodejs features
+- There is a separate repo - `wwwplay` - which is an analog for the browser
+- This should be renamed in the future to _NodePlay_
 
 ## Getting Started
 
-1. Install [fnm](https://github.com/Schniz/fnm)
-1. **fnm** should switch to the correct node version from the **.nvmrc**
-   - Confirm with `node -v`
-   - Expected: `v20.16.0`
-1. Check if you have corepack:
-   ```zsh
+1. Install [fnm](https://github.com/Schniz/fnm) and then install node:
+   ```sh
+   fnm use
+   ```
+1. Confirm the current node version matches the [.nvmrc](./.nvmrc):
+   ```sh
+   node -v
+   ```
+1. [corepack](https://github.com/nodejs/corepack) is installed with node:
+   ```sh
    corepack -v
    ```
-1. If not, install it:
-   ```zsh
-   brew install corepack
-   ```
-1. Enable pnpm:
-   ```zsh
-   corepack enable pnpm
-   ```
 1. Install pnpm:
-   ```zsh
-   corepack use pnpm@9
+   ```sh
+   corepack enable
    ```
 1. Install dependencies:
-   ```zsh
+   ```sh
    pnpm install
-   ```
-1. Install Husky for pre-commit hooks
-   ```zsh
-   pnpm prepare
    ```
