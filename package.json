@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "check": "./scripts/check.sh",
-    "clean": "rm -rf dist",
+    "clean": "./scripts/clean.sh",
     "fix": "./scripts/fix.sh",
     "format:check": "oxfmt --check",
     "format:fix": "oxfmt",
     "lint:check": "oxlint",
     "lint:fix": "oxlint --fix",
-    "start": "pnpm types:check && node ./src/app.ts",
-    "types:check": "tsc --noEmit"
+    "start:bundler:tsc": "./ts-bundler-tsc/start.sh",
+    "start:node:node": "./ts-node-node/start.sh",
+    "start:node:tsc": "./ts-node-tsc/start.sh"
   },
   "devDependencies": {
     "oxfmt": "^0.49.0",
