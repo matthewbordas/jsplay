@@ -1,22 +1,42 @@
 {
-    "name": "jsplay",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.ts",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.62.0",
-        "eslint": "^8.44.0",
-        "eslint-config-standard-with-typescript": "^36.0.0",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-n": "^15.7.0",
-        "eslint-plugin-promise": "^6.1.1",
-        "eslint-plugin-react": "^7.32.2",
-        "prettier": "3.0.0",
-        "typescript": "^5.1.6"
-    }
+  "name": "node-ts-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node sandbox for playing around with the latest TypeScript features",
+  "keywords": [
+    "esm",
+    "module-resolution",
+    "node",
+    "tsc",
+    "tsconfig",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Matt Bordas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewbordas/node-ts-playground.git"
+  },
+  "type": "module",
+  "scripts": {
+    "check": "bash ./scripts/check.sh",
+    "clean": "bash ./scripts/clean.sh",
+    "fix": "bash ./scripts/fix.sh",
+    "format:check": "oxfmt --check",
+    "format:fix": "oxfmt",
+    "lint:check": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "start:bundler:tsc": "bash ./ts-bundler-tsc/start.sh",
+    "start:node:node": "bash ./ts-node-node/start.sh",
+    "start:node:tsc": "bash ./ts-node-tsc/start.sh"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.49.0",
+    "oxlint": "^1.64.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": "24.14.0"
+  },
+  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499"
 }

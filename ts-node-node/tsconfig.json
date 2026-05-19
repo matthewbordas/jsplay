@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    // Node will transpile and run the TS files itself
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  }
+}
