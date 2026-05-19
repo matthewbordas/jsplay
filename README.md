@@ -89,44 +89,34 @@ This is built for macOS, it has not been tested on other platforms.
 
 ## TS 6 Questions
 
-### Project: "ts-bundler-tsc"
+### Project: [ts-bundler-tsc](./ts-bundler-tsc/)
 
-#### tsconfig module
+#### Emitting with Bundler Module Resolution?
 
-Commenting out the tsconfig **module** field and only leaving `moduleResolution: bundler` is NOT a compiler error. This is not the case with the others (see below).
-
-#### .js import
-
-You have to add **.js** to the import:
+With `moduleResolution` set to **bundler** and _tsc_ emitting JS, you have to add **.js** to the import:
 
 ```ts
 import { hello } from "./my-module.js";
 ```
 
-Or it won't be resolved at runtime. I assumed omitting would've succeeded given the **bundler** mode or at least an error at compile time given none of the following flags are set:
+If you don't, it won't be resolved at runtime. I assumed omitting would've succeeded given **bundler** mode or at least a compile-time error given none of the following flags are set:
 
-- `noEmit`
-- `rewriteRelativeImportExtensions`
-- `allowArbitraryExtensions`
-- `allowImportingTsExtensions`
+- [noEmit](https://www.typescriptlang.org/tsconfig/#noEmit)
+- [allowImportingTsExtensions](https://www.typescriptlang.org/tsconfig/#allowImportingTsExtensions)
+- [allowArbitraryExtensions](https://www.typescriptlang.org/tsconfig/#allowArbitraryExtensions)
+- [rewriteRelativeImportExtensions](https://www.typescriptlang.org/tsconfig/#rewriteRelativeImportExtensions)
 
-It is being used to emit JS, even in **bundler** mode, so we aren't using an external tool to handle processing the imports.
+It's emitting JS in **bundler** mode, we aren't using another tool.
 
-**allowImportingTsExtensions** is only allowed with `noEmit: true`. I think the same logic could apply to `moduleResolution: bundler` to avoid this type of confusion.
+_allowImportingTsExtensions_ is only allowed with `noEmit: true`. The same logic could apply to `moduleResolution: bundler` to avoid this type of confusion.
 
-### Project: "ts-node-node"
+Unless there's a reason you'd still want to _emit_ even in **bundler** mode?
 
-#### tsconfig module
+### Project: [ts-node-tsc](./ts-node-tsc/)
 
-Commenting out the **module** setting entirely and only leaving `moduleResolution: nodenext` IS A compiler error. We have to make sure it's set to _nodenext_.
+#### What are the Correct TSConfig Defaults?
 
-See the below for further discussion on this.
-
-### Project: "ts-node-tsc"
-
-#### tsconfig defaults
-
-This tsconfig is empty which should result in the following defaults:
+Leaving the _tsconfig_ empty, we assume the following defaults will be utilized:
 
 ```json
 {
@@ -147,10 +137,10 @@ This is confusing because the [release notes](https://www.typescriptlang.org/doc
 
 What is the default of **moduleResolution** in this case? _bundler_?
 
-### Runtime Compiler Defaults
+### Misc: Compiler Arg to View Full Defaults
 
 The _tsc_ CLI flag [--showConfig](https://www.typescriptlang.org/docs/handbook/compiler-options.html#compiler-options) does not include the fully resolved compiler settings at runtime. e.g. the defaults.
 
-Without this, we have a limited debugging capability unless we dig further into the API or source code which are more time consuming approaches.
+Without this, we have limited debugging capabilities unless we dig further into the API or source code. This creates friction after releases when the defaults can change and the documentation may not be completely accurate.
 
-It would be helpful to augment this (or create a new arg) to add the injected settings which would provide a more complete picture.
+It would be helpful to augment this (or create a new arg) to add the injected settings which would provide a more complete picture. Furthermore, this would lessen the burden on all of the docs staying in sync and move the source of truth closing to the code and tooling.
