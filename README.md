@@ -1,4 +1,4 @@
-# Node + TS Play
+# Node + TS Play 
 
 This is a Node sandbox for playing around with the latest TypeScript features:
 
