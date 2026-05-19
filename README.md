@@ -144,3 +144,4 @@ The _tsc_ CLI flag [--showConfig](https://www.typescriptlang.org/docs/handbook/c
 Without this, we have limited debugging capabilities unless we dig further into the API or source code. This creates friction after releases when the defaults can change and the documentation may not be completely accurate.
 
 It would be helpful to augment this (or create a new arg) to add the injected settings which would provide a more complete picture. Furthermore, this would lessen the burden on all of the docs staying in sync and move the source of truth closing to the code and tooling.
+
