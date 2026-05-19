@@ -9,23 +9,23 @@ This is built for macOS, it has not been tested on other platforms.
 
 ## Setup
 
-1. Install [fnm](https://github.com/Schniz/fnm)
+1. Install [fnm](https://github.com/Schniz/fnm):
    ```sh
    curl -fsSL https://fnm.vercel.app/install | bash
    ```
-1. Install node:
+1. Install [node](https://nodejs.org/en/about/previous-releases):
    ```sh
    fnm use
    ```
-1. Confirm the current node version matches the [.nvmrc](./.nvmrc):
+1. Confirm the node version matches the [.nvmrc](./.nvmrc):
    ```sh
    node -v
    ```
-1. [corepack](https://github.com/nodejs/corepack) is installed with node:
+1. Node includes [corepack](https://github.com/nodejs/corepack):
    ```sh
    corepack -v
    ```
-1. Install pnpm:
+1. Use corepack to install [pnpm](https://pnpm.io/installation#using-corepack):
    ```sh
    corepack enable
    ```
