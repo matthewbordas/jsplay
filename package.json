@@ -2,6 +2,7 @@
   "name": "node-ts-playground",
   "version": "1.0.0",
   "description": "Node sandbox for playing around with the latest TypeScript features",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "check": "./scripts/check.sh",
