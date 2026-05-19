@@ -42,9 +42,9 @@ This is built for macOS, it has not been tested on other platforms.
    - **[ts-node-tsc](./ts-node-tsc/)**
 1. Naming convention:
    - `ts-[module_resolution]-[transpiler]`
-1. module-resolution:
+1. Module resolution:
    - The value of the [moduleResolution](https://www.typescriptlang.org/tsconfig/#moduleResolution) compiler field
-1. transpiler:
+1. Transpiler:
    - The tool handling transpilation
    - _tsc_: TypeScript is handling it
    - _node_: Node is running it natively
